@@ -55,14 +55,17 @@ body {
   text-align: right;
 }
 
-.eggPics img {
-  float:  left;
-  width:  150px;
-  height: 150px;
-  padding: 10px;
-  background-size: cover;
+.eggPics {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+
 }
 
-.photos {
+.eggPicture {
   display: inline-block;
+  width:  250px;
+  height: 250px;
+  padding: 10px;
+  background-size: cover;
 }
