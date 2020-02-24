@@ -1,10 +1,68 @@
-.error {
-  color: red;
-  font-weight: bold;
+body {
+  background-color: #EFEFEE;
 }
 
-.wait-indicator {
-  position: absolute;
-  margin-left: 5px;
-  width: 20px;
+/* .header {
+  color: #FFC300 ;
+  font-family: 'Coda Caption', sans-serif;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 130px;
+} */
+
+.top-header {
+  color: #6C6861 ;
+  font-family: 'Barlow';
+  text-align: center;
+  font-size: 35px;
+  padding-top: 25px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.bottom-header {
+  color: #FFC300 ;
+  font-family: 'Barlow';
+  text-align: center;
+  font-size: 160px;
+  margin-top: 0px;
+  border-top: 0px;
+  padding-top: 0px;
+}
+
+/* .blurb {
+  color: #6C6861 ;
+  font-family: 'Barlow';
+  text-align: center;
+} */
+
+.form {
+  color: #6C6861 ;
+  font-family: 'Barlow';
+  text-align: center;
+}
+
+.formButton {
+  color: #6C6861 ;
+  font-family: 'Barlow';
+  text-align: center;
+}
+
+.rating {
+  color: #6C6861 ;
+  font-family: 'Barlow';
+  text-align: right;
+}
+
+.eggPics img {
+  float:  left;
+  width:  150px;
+  height: 150px;
+  padding: 10px;
+  background-size: cover;
+}
+
+.photos {
+  display: inline-block;
 }
