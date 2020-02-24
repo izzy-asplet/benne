@@ -4,6 +4,7 @@ exports.up = function(knex) {
     table.increments('id')
     table.string('cafe_name')
     table.string('image')
+    table.string('variation')
     table.decimal('price')
     table.string('rating') 
 })

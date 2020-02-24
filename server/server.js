@@ -2,11 +2,11 @@ const path = require('path')
 const express = require('express')
 
 const server = express()
-// const redditRoutes = require('./reddit')
+const benneRoutes = require('./routes/bennes')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
-// server.use('/api/v1/reddit', redditRoutes)
+server.use('/v1/bennes', benneRoutes)
 
 module.exports = server

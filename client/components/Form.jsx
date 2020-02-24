@@ -1,27 +1,34 @@
 import React from 'react'
 
+import { saveBenne } from '../api'
 
 class Form extends React.Component {
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
         this.state = {
           cafeName: '',
-          rating: '',
-          price: '',
-          varity: '',
           image: '',
+          variation: '',
+          price: '',
+          rating: '',
         }
 
         this.handleCafeNameChange = this.handleCafeNameChange.bind(this)
-        this.handleRatingChange = this.handleRatingChange.bind(this)
-        this.handlePriceChange = this.handlePriceChange.bind(this)
         this.handleAddImageChange = this.handleAddImageChange.bind(this)
+        this.handleVariationChange = this.handleVariationChange.bind(this)
+        this.handlePriceChange = this.handlePriceChange.bind(this)
+        this.handleRatingChange = this.handleRatingChange.bind(this)
 
+        this.handleSubmit = this.handleSubmit.bind(this)
       }
       
       componentDidMount() {
           this.setState ({
-              image: ''
+            cafeName: '',
+            image: '',
+            variation: '',
+            price: '',
+            rating: '',
           })
       }
 
@@ -29,25 +36,32 @@ class Form extends React.Component {
         this.setState({ cafeName: e.target.value })
       }
       
-      handleRatingChange (e) {
-        this.setState({ rating: e.target.value })
-      }
-
-      handlePriceChange (e) {
-        this.setState({ price: e.target.value })
-      }
-
       handleAddImageChange (e) {
           this.setState({ addImage: e.target.value})
       }
 
-    //   handleSubmit(e){
-    //     e.preventDefault()
-    //       callDeep(this.state.url)
-    //       .then(res  => res)
-    //       .then(url => this.setState({psycUrl: url.output_url}))
-    //     console.log(this.state.url)
-    //   }
+      handleVariationChange (e) {
+        this.setState({ variation: e.target.value})
+      }
+      
+      handlePriceChange (e) {
+        this.setState({ price: e.target.value })
+      }
+
+      handleRatingChange (e) {
+        this.setState({ rating: e.target.value })
+      }
+
+
+
+
+      handleSubmit = (e) => {
+        // console.log('anything')
+        e.preventDefault()
+        saveBenne(this.state.benne)
+        .then(() => {}
+        )
+      }
     
       render () {
         return (
@@ -57,27 +71,27 @@ class Form extends React.Component {
             <input type='text' name='cafeName' onChange={this.handleCafeNameChange} />
             <br/>
 
-            <lable>Image: </lable>
+            <label>Image: </label>
             <input type='' name='addImage' onChange={this.handleAddImageChange} />
+            <br/>
+
+            <label for='variation'>Variation: </label>
+            <select className='formButton' type='text' name='variation' onChange={this.handleVariationChange} > 
+            <option value='bacon'>bacon</option> <option value='salmon'>salmon</option> <option value='ham'>ham</option> <option value='spinach'>spinach</option> <option value='tomato'>tomato</option> <option value='other'>other</option> </select>
+            
             <br/>
 
             <label>Price: $ </label>
             <input type='text' name='rating' onChange={this.handlePriceChange} />
             <br/>
 
-            <lable for='varity'>Varieties: 
-            <input type='text' name='varity' onChange={this.handleVarityChange} /> 
-            <option value='bacon'>bacon</option> <option value='ham'>ham</option>
-            </lable>
-            <br/>
-
-            <label for='rating'>Rating:  
+            <label for='rating'>Rating: </label> 
             <input  className='rating' type='number' name='rating' min='0' max='10' onChange={this.handleRatingChange} />
-            /10</label>
+            /10
             <br/>
             <br/>
 
-            <button className='formButton'>submit</button>
+            <button type='submit' className='formButton'>submit</button>
             
           </form>
         )
@@ -86,40 +100,3 @@ class Form extends React.Component {
 
 
 export default Form
-
-
-
-// class MyForm extends React.Component {
-//     constructor() {
-//       super();
-//       this.handleSubmit = this.handleSubmit.bind(this);
-//     }
-  
-//     handleSubmit(event) {
-//       event.preventDefault();
-//       const data = new FormData(event.target);
-      
-//       fetch('/api/form-submit-url', {
-//         method: 'POST',
-//         body: data,
-//       });
-//     }
-  
-//     render() {
-//       return (
-//         <form onSubmit={this.handleSubmit}>
-//           <label htmlFor="username">Enter username</label>
-//           <input id="username" name="username" type="text" />
-  
-//           <label htmlFor="email">Enter your email</label>
-//           <input id="email" name="email" type="email" />
-  
-//           <label htmlFor="birthdate">Enter your birth date</label>
-//           <input id="birthdate" name="birthdate" type="text" />
-  
-//           <button>Send data!</button>
-//         </form>
-//       );
-//     }
-//   }
-
