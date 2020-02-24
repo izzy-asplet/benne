@@ -8,6 +8,7 @@ class Form extends React.Component {
           cafeName: '',
           rating: '',
           price: '',
+          varity: '',
           image: '',
         }
 
@@ -62,6 +63,12 @@ class Form extends React.Component {
 
             <label>Price: $ </label>
             <input type='text' name='rating' onChange={this.handlePriceChange} />
+            <br/>
+
+            <lable for='varity'>Varieties: 
+            <input type='text' name='varity' onChange={this.handleVarityChange} /> 
+            <option value='bacon'>bacon</option> <option value='ham'>ham</option>
+            </lable>
             <br/>
 
             <label for='rating'>Rating:  
