@@ -7,9 +7,11 @@ function getBennes(db = connection) {
   return db('bennes')
 }
 
-function saveBennes(benne, db = connection) {
+function saveBennes(bennes, db = connection) {
   return db('bennes')
+  .insert(bennes)
 }
+
 module.exports = {
   getBennes,
   saveBennes,
