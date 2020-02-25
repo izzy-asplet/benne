@@ -22,22 +22,13 @@ class Form extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
       }
       
-      componentDidMount() {
-          this.setState ({
-            cafeName: '',
-            image: '',
-            variation: '',
-            price: '',
-            rating: '',
-          })
-      }
 
       handleCafeNameChange (e) {
         this.setState({ cafeName: e.target.value })
       }
       
       handleAddImageChange (e) {
-          this.setState({ addImage: e.target.value})
+          this.setState({ image: e.target.value})
       }
 
       handleVariationChange (e) {
@@ -56,9 +47,9 @@ class Form extends React.Component {
 
 
       handleSubmit = (e) => {
-        // console.log('anything')
+        console.log(this.state)
         e.preventDefault()
-        saveBenne(this.state.benne)
+        saveBenne(this.state)
         .then(() => {}
         )
       }
@@ -72,7 +63,7 @@ class Form extends React.Component {
             <br/>
 
             <label>Image: </label>
-            <input type='' name='addImage' onChange={this.handleAddImageChange} />
+            <input type='text' name='addImage' onChange={this.handleAddImageChange} />
             <br/>
 
             <label for='variation'>Variation: </label>
